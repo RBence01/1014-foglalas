@@ -17,7 +17,7 @@ export class AppController {
   indexPost(@Body() body: cinemaDTO, @Res() res: Response) {
     const errors = [];
     if (!body.date || !body.email || !body.name || !body.people)
-      errors.push("All fileds are required!");
+      errors.push("All fields are required!");
     if (!/^\w+[@]\w+[.]\w+$/.test(body.email))
       errors.push("Invalid email!");
     if (new Date(body.date.replace('T', ' ')).getTime() < Date.now())
